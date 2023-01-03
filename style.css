@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    width: 100%;
+    padding: 10px 30px;
+    background-color: rgb(85, 85, 197);
+}
+
+.header h3{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.upper-btn-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding: 30px;
+
+}
+.upper-btn-box .btn-left-box{
+    width: 50%;
+    height: 100%;
+}
+
+.upper-btn-box .btn-left-box button{
+    padding: 13px;
+    margin: 0px 10px;
+    background-color: rgb(119, 119, 216);
+    color: white;
+    font-size: 22px;
+
+}
+
+.container{
+    border: 1px solid black;
+    height: 70vh;
+    margin: 20px;
+}
+/* Start table coding*/
+
+.table-box{
+    width: 100%;
+    padding: 30px;
+}
+
+.table-box table {
+    width: 100%;
+    
+}
+
+.table-box table tr th {
+    border-right: 1px solid black;
+    padding: 0px 0px 30px;
+    border-bottom: 1px solid black;
+    background-color: rgb(82, 82, 182);
+    color: white;
+}
+
+.table-box table tr td{
+    border-right: 1px solid black;
+    padding: 10px 0px 0px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: rgb(167, 167, 207);
+
+}
+
+.table-box table tr td button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: blueviolet;
+    border-bottom: 1px solid blueviolet;
+    padding: 10px   
+}
+
+.input-box{
+    padding: 13px;
+    margin: 0px 10px;
+    background-color: rgb(119, 119, 216);
+    color: white;
+    font-size: 22px
+}
+
+/* start retrieve coding*/
+
+.retrieve{
+    width: 50%;
+    height: 100%;
+}
+.retrieve button{
+    padding: 13px;
+    margin: 0px 10px;
+    background-color: rgb(119, 119, 216);
+    color: white;
+    font-size: 22px;
+}
+.retrieve input{
+    padding: 13px;
+    margin: 0px 10px;
+    color: white;
+    font-size: 22px;
+    background-color: rgb(169, 188, 240);
+}
+

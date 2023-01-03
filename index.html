@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <h3>Priyanka's Directory App</h3>
+    </div>
+    <div class="upper-btn-box">
+        <div class="btn-left-box">
+            <a href="#"><button>Add New Person</button></a>
+            <a href="retrieve.html"><button id="retrieve-btn">Retrieve Information</button></a>
+        </div>
+
+        <div class="retrieve">
+            <input type="text" id="aadharNum" placeholder="Enter Aadhar Number"/>
+            <button>search</button>
+            <div></div>
+        </div>
+    </div>
+    <div class="container">
+        <span>Add New Person</span>
+        <div class="table-box">
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Aadhar Number</th>
+                    <th>Mobile Number</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="table-data">
+                    
+                </tbody>
+                <tr>
+                    <form id="register-form" class="reg-form">
+                    <td><input type="text" id="name"></td>
+                    <td><input type="date" onchange="FindAge()" id="dob"/></td>
+                    <td><input type="text" id="aadhar" /></td>
+                    <td><input type="text" id="mob-num"  name="phone" value="" />
+                    <div id="phone_error" class="error hidden" ></div>
+                    </td>
+                    <td><input type="text" readonly id="age"  name="age" placeholder="Age"></td>
+                    <td>
+                        <button id="save-btn">Save</button>
+                        <button>Delete</button>
+                    </td>
+                    <button class="input-box" id="add-btn" onclick="return validate()">Add</button>
+                </form>
+                </tr>
+
+            </table>
+
+        </div>
+        
+    </div>
+
+    
+
+    
+    <script src="script.js"></script>  
+</body>
+</html> 
+
+
