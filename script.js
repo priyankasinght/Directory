@@ -1,12 +1,12 @@
-const personData = [];
-const nameEl = document.getElementById("name");
-const dobEl = document.getElementById("dob");
-const aadharNum = document.getElementById("aadhar");
-const mobNum = document.getElementById("mob-num");
-const ageEl = document.getElementById("age");
-const addBtn = document.querySelector("#add-btn");
-const saveBtn = document.querySelector("#save-btn"); 
-const registerForm = document.querySelector("#register-form");
+let personData = [];
+let nameEl = document.getElementById("name");
+let dobEl = document.getElementById("dob");
+let aadharNum = document.getElementById("aadhar");
+let mobNum = document.getElementById("mob-num");
+let ageEl = document.getElementById("age");
+let addBtn = document.querySelector("#add-btn");
+let saveBtn = document.querySelector("#save-btn"); 
+let registerForm = document.querySelector("#register-form");
 
 /* start add btn coding */
 addBtn.onclick = function (e) {
@@ -29,7 +29,7 @@ function addData() {
         mobNum: mobNum.value,
         age: ageEl.value
     })
-    const personString = JSON.stringify(personData);
+    let personString = JSON.stringify(personData);
     localStorage.setItem("personData", personString);
 
 }
@@ -56,13 +56,13 @@ function addData() {
         mobNum: mobNum.value,
         age: ageEl.value
     })
-    const personString = JSON.stringify(personData);
+    let personString = JSON.stringify(personData);
     localStorage.setItem("personData", personString);
 }
 
 // start showing data from local storage
 
-const tableData = document.querySelector("#table-data");
+let tableData = document.querySelector("#table-data");
 const getDataFromLocal = () => {
     tableData.innerHTML = "";
     personData.forEach((data, index) => {
@@ -84,12 +84,12 @@ const getDataFromLocal = () => {
 
     /* start delete coding */
 
-    const i;
-    const allDelBtn = document.querySelectorAll(".del-btn");
+    let i;
+    let allDelBtn = document.querySelectorAll(".del-btn");
     for (i = 0; i < allDelBtn.length; i++){
         allDelBtn[i].onclick = function(){
-            const tr = this.parentElement.parentElement;
-            const id = tr.getAttribute("index");
+            let tr = this.parentElement.parentElement;
+            let id = tr.getAttribute("index");
             swal({
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -119,18 +119,18 @@ getDataFromLocal();
 
 // start search coding
 
-const searchEl = document.querySelector("#aadharNum");
+let searchEl = document.querySelector("#aadharNum");
 searchEl.oninput = function () {
     searchFunction();
 }
 
 function searchFunction(){
-    const tr = tableData.querySelectorAll("TR");
-    const filter = searchEl.value.toLowerCase();
-    const i;
+    let tr = tableData.querySelectorAll("TR");
+    let filter = searchEl.value.toLowerCase();
+    let i;
     for(i = 0; i < tr.length; i++){
-        const td = tr[i].getElementsByTagName("TD")[2];
-        const id = td.innerHTML;
+        let td = tr[i].getElementsByTagName("TD")[2];
+        let id = td.innerHTML;
         if(id.toLowerCase().indexOf(filter) > -1){
             tr[i].style.display = "";
         }else{
@@ -141,10 +141,10 @@ function searchFunction(){
 
 // calculate age from dob
 function FindAge() {
-    const day = document.getElementById("dob").value;
-    const DOB = new Date(day);
-    const today = new Date();
-    const Age = today.getTime() - DOB.getTime();
+    let day = document.getElementById("dob").value;
+    let DOB = new Date(day);
+    let today = new Date();
+    let Age = today.getTime() - DOB.getTime();
     Age = Math.floor( Age / (1000 * 60 * 60 * 24 * 365.25));
     document.getElementById("age").value = Age;
 }
@@ -152,12 +152,12 @@ function FindAge() {
 // add validation to phone number
 
 function validatePhoneNumber(input_str) {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[\s\.]?[0-9]{4,6}$/im;
+    let re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[\s\.]?[0-9]{4,6}$/im;
     return re.test(input_str);
 }
 
 function validate() {
-    const phone = document.getElementById('mob-num').value;
+    let phone = document.getElementById('mob-num').value;
     if (!validatePhoneNumber(phone)) { 
         document.getElementById('phone_error').classList.remove('hidden' );
     } else {
