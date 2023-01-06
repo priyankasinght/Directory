@@ -1,20 +1,12 @@
-/* start all global variable */
-var personData = [];
-var nameEl = document.getElementById("name");
-var dobEl = document.getElementById("dob");
-var aadharNum = document.getElementById("aadhar");
-var mobNum = document.getElementById("mob-num");
-var ageEl = document.getElementById("age");
-var addBtn = document.querySelector("#add-btn");
-var saveBtn = document.querySelector("#save-btn"); 
-var registerForm = document.querySelector("#register-form");
-
- /* end all global variable */
-
- 
-    
-  
-   
+const personData = [];
+const nameEl = document.getElementById("name");
+const dobEl = document.getElementById("dob");
+const aadharNum = document.getElementById("aadhar");
+const mobNum = document.getElementById("mob-num");
+const ageEl = document.getElementById("age");
+const addBtn = document.querySelector("#add-btn");
+const saveBtn = document.querySelector("#save-btn"); 
+const registerForm = document.querySelector("#register-form");
 
 /* start add btn coding */
 addBtn.onclick = function (e) {
@@ -37,7 +29,7 @@ function addData() {
         mobNum: mobNum.value,
         age: ageEl.value
     })
-    var personString = JSON.stringify(personData);
+    const personString = JSON.stringify(personData);
     localStorage.setItem("personData", personString);
 
 }
@@ -64,13 +56,13 @@ function addData() {
         mobNum: mobNum.value,
         age: ageEl.value
     })
-    var personString = JSON.stringify(personData);
+    const personString = JSON.stringify(personData);
     localStorage.setItem("personData", personString);
 }
 
 // start showing data from local storage
 
-var tableData = document.querySelector("#table-data");
+const tableData = document.querySelector("#table-data");
 const getDataFromLocal = () => {
     tableData.innerHTML = "";
     personData.forEach((data, index) => {
@@ -92,12 +84,12 @@ const getDataFromLocal = () => {
 
     /* start delete coding */
 
-    var i;
-    var allDelBtn = document.querySelectorAll(".del-btn");
+    const i;
+    const allDelBtn = document.querySelectorAll(".del-btn");
     for (i = 0; i < allDelBtn.length; i++){
         allDelBtn[i].onclick = function(){
-            var tr = this.parentElement.parentElement;
-            var id = tr.getAttribute("index");
+            const tr = this.parentElement.parentElement;
+            const id = tr.getAttribute("index");
             swal({
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -127,18 +119,18 @@ getDataFromLocal();
 
 // start search coding
 
-var searchEl = document.querySelector("#aadharNum");
+const searchEl = document.querySelector("#aadharNum");
 searchEl.oninput = function () {
     searchFunction();
 }
 
 function searchFunction(){
-    var tr = tableData.querySelectorAll("TR");
-    var filter = searchEl.value.toLowerCase();
-    var i;
+    const tr = tableData.querySelectorAll("TR");
+    const filter = searchEl.value.toLowerCase();
+    const i;
     for(i = 0; i < tr.length; i++){
-        var td = tr[i].getElementsByTagName("TD")[2];
-        var id = td.innerHTML;
+        const td = tr[i].getElementsByTagName("TD")[2];
+        const id = td.innerHTML;
         if(id.toLowerCase().indexOf(filter) > -1){
             tr[i].style.display = "";
         }else{
@@ -149,10 +141,10 @@ function searchFunction(){
 
 // calculate age from dob
 function FindAge() {
-    var day = document.getElementById("dob").value;
-    var DOB = new Date(day);
-    var today = new Date();
-    var Age = today.getTime() - DOB.getTime();
+    const day = document.getElementById("dob").value;
+    const DOB = new Date(day);
+    const today = new Date();
+    const Age = today.getTime() - DOB.getTime();
     Age = Math.floor( Age / (1000 * 60 * 60 * 24 * 365.25));
     document.getElementById("age").value = Age;
 }
@@ -160,12 +152,12 @@ function FindAge() {
 // add validation to phone number
 
 function validatePhoneNumber(input_str) {
-    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[\s\.]?[0-9]{4,6}$/im;
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[\s\.]?[0-9]{4,6}$/im;
     return re.test(input_str);
 }
 
 function validate() {
-    var phone = document.getElementById('mob-num').value;
+    const phone = document.getElementById('mob-num').value;
     if (!validatePhoneNumber(phone)) { 
         document.getElementById('phone_error').classList.remove('hidden' );
     } else {
